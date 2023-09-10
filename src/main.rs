@@ -32,6 +32,8 @@ fn main() {
     )))
     .unwrap();
 
+    eprintln!("Connected to {}", sock.getpeername().unwrap());
+
     let mut buf = [0u8; 1024];
     loop {
         let n = std::io::Read::read(&mut input, &mut buf).unwrap();
